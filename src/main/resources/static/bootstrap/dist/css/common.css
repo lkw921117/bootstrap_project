@@ -1,0 +1,172 @@
+body {
+  overflow: hidden;
+}
+
+#modal-xl {
+  top: 50%;
+  margin-top: -250px; /*높이값에50%*/
+}
+
+/* 컨텐츠 영역 */
+#contents {
+  width:100%;
+  border:solid 1px lightgray;
+  margin: -18px 5px 0px 5px;
+  overflow:auto;
+  padding: 5px;
+  font-size: 0.8em;
+}
+
+/* 메뉴 글씨 크기 전역 변경 */
+.nav-link {
+  font-size: 1.0em;
+}
+
+.nav-item {
+  font-size: 0.9em;
+}
+
+/* 상단 메뉴 스타일 재정의 */
+.top-menu-padding {
+  padding-left: 11px !important;
+  padding-right: 11px !important;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* 상단 메뉴 선택 상태 추가 */
+.top-menu-selected {
+  background-color: #3895EE;
+  border-radius: 5px;
+  color: #ffffff !important;
+}
+
+/* .top-menu-selected {
+  border-bottom: solid 5px #3895EE;
+  font-size: 1.05em;
+} */
+
+.left-menu-padding {
+  /*padding-left: 25px;*/
+  font-size: 1.0em;
+}
+
+.left-menu-selected {
+  background-color:#007BFF !important;
+  color:#FFFFFF !important;
+}
+
+.menu-history-link {
+  margin-top:-5px;
+}
+
+.breadcrumb-item.active {
+  font-size: 0.9em;
+}
+.breadcrumb-item.active a {
+  color:#000000;
+}
+
+#_selectTitle {
+  font-weight: bold;
+  color: #666666;
+}
+
+.preloader {
+  display: none;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+input::placeholder {
+  color: lightgray;
+  font-style: italic;
+}
+
+textarea::placeholder {
+  color: lightgray;
+  font-weight: bold;
+}
+
+/*.dataTables tbody tr, .dataTables thead tr {
+  min-height: 25px;
+}*/
+table.dataTable thead th, table.dataTable thead td {
+  padding: 5px 10px; 
+  border-bottom: 0;
+  text-align: center;
+}
+table.dataTable tbody th, table.dataTable tbody td {
+  padding: 5px 5px; 
+  text-align: center;
+}
+
+.table-bordered tr td input, 
+.table-bordered tr td select, 
+.table-bordered tr td textarea {
+  width: calc(100% - 10px);
+  height: 25px;
+  padding: 2px;
+  margin: 2px 5px;
+  border: 1px solid #aaaaaa;
+  /* border-radius: 3px; */
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+/*
+::webkit-scrollbar : 스크롤바 전체
+::webkit-scrollbar-thumb : 스크롤 막대
+::webkit-scrollbar-track : 스크롤 막대 외부
+*/
+/* Works on Firefox */
+/* {
+scrollbar-width: thin;
+scrollbar-color: #2f3542 #e2e2e2;
+}
+*::-webkit-scrollbar {
+width: 10px;
+margin-right: 20px;
+}
+*::-webkit-scrollbar-thumb {
+background-color: #2f3542;
+border-radius: 10px;
+background-clip: padding-box;
+border: 2px solid transparent;
+margin-right: 20px;
+}
+*::-webkit-scrollbar-track {
+background-color: #e2e2e2;
+border-radius: 10px;
+/ *box-shadow: inset 0px 0px 5px #2f3542;* /
+margin-right: 20px;
+margin-top:1px;
+margin-bottom:1px;
+}*/	
+
+*::-webkit-scrollbar {
+  width: 8px;
+  margin-right: 20px;
+  background-color: hsla(0, 0%, 80%, 0.50);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 60%, 0.50);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}	
+
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+  /* 이 안에 Safari(10.1 이상)에서만 적용할 스타일 작성 */
+  *::-webkit-scrollbar-track {
+    background-color: #e2e2e2;
+    border-radius: 10px;
+    }
+  }
+}

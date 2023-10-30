@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  
+
+    <title>Toy Project Admin</title>    
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" /> <!-- Google Font: Source Sans Pro -->    
+    <link rel="stylesheet" href="/bootstrap/plugins/fontawesome-free/css/all.min.css" /> <!-- Font Awesome -->    
+  
+    <link rel="stylesheet" href="/bootstrap/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" /> <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/bootstrap/plugins/toastr/toastr.min.css" /> <!-- Toastr -->
+
+    <link rel="stylesheet" href="/bootstrap/plugins/icheck-bootstrap/icheck-bootstrap.min.css" /> <!-- icheck bootstrap -->    
+    <link rel="stylesheet" href="/bootstrap/dist/css/adminlte.min.css" /> <!-- Theme style -->  
+
+    <script language="javascript" type="text/javascript">
+        var Toast;
+        function loginSubmit() {
+            var userId = document.querySelector('#userId').value;
+            var userPwd = document.querySelector('#userPwd').value;
+            if (userId == "") {
+                //alert('아이디를 입력해 주세요.');
+                Toast.fire({
+                    icon: 'error',
+                    title: '<div style="margin:12px;">아이디를 입력해 주세요.</div>'
+                });
+                document.querySelector('#userId').focus();
+                return;
+            }
+            if (userPwd == "") {
+                //alert('비밀번호를 입력해 주세요.');
+                Toast.fire({
+                    icon: 'error',
+                    title: '<div style="margin:12px;">비밀번호를 입력해 주세요.</div>'
+                });
+                document.querySelector('#userPwd').focus();
+                return;
+            }
+            document.querySelector('#loginForm').submit();
+        }
+        function init() {            
+            document.querySelector('#btnLogin').addEventListener('click', function () {
+                loginSubmit();
+            }, false);
+            document.querySelector('#userId').addEventListener('keyup', function (evt) {
+                var keyCode = evt.keyCode || window.event.keyCode;
+                if (keyCode === 13) {
+                    document.querySelector('#userPwd').focus();
+                }
+            });
+            document.querySelector('#userPwd').addEventListener('keyup', function (evt) {
+                var keyCode = evt.keyCode || window.event.keyCode;
+                if (keyCode === 13) {
+                    loginSubmit();
+                }
+            });
+            Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        }
+        window.addEventListener('load', init, false);
+    </script>
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <span class="h2"><b>Toy Project</b> Admin</span>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">로그인</p>
+                <form action="" method="get" id="loginForm" name="loginForm">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="ID" id="userId" name="userId" value="">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Password" id="userPwd" name="userPwd" value="">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">
+                                    Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" id="btnLogin" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/bootstrap/plugins/jquery/jquery.min.js"></script>    
+    <script src="/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap 4 -->
+
+    <script src="/bootstrap/plugins/sweetalert2/sweetalert2.min.js"></script> <!-- SweetAlert2 -->
+    <script src="/bootstrap/plugins/toastr/toastr.min.js"></script> <!-- Toastr -->
+
+    <script src="/bootstrap/dist/js/adminlte.min.js"></script> <!-- AdminLTE App -->
+</body>
+</html>

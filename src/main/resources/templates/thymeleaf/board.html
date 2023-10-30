@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />  
+    <link rel="shortcut icon" href="./dist/img/g2works_favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./dist/img/g2works_favicon.ico" type="image/x-icon" />
+
+    <title>G2Works Admin</title> 
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" /> <!-- Google Font: Source Sans Pro -->  
+    <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css" /> <!-- Font Awesome Icons -->  
+
+    <link rel="stylesheet" href="./plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css" /> <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="./plugins/toastr/toastr.min.css" /> <!-- Toastr -->
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" /> <!-- IonIcons -->  
+    <link rel="stylesheet" href="./plugins/icheck-bootstrap/icheck-bootstrap.min.css" /> <!-- icheck bootstrap -->    
+    <link rel="stylesheet" href="./dist/css/adminlte.min.css" /> <!-- Theme style -->
+    <link rel="stylesheet" href="./dist/css/common.css" />
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="./plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="./plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="./plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-footer-fixed"><!--text-sm-->
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light font-weight-bold" style="font-size:1em;">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="dashboard.html" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-sm-inline-block"> <!-- d-none 적용시 width < 575 이면 메뉴 숨겨짐 -->
+                    <a href="dashboard.html" class="nav-link top-menu-padding">메인</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="member.html" class="nav-link top-menu-padding">회원관리</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="request.html" class="nav-link top-menu-padding">신청관리</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="pay.html" class="nav-link top-menu-padding">결제관리</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="board.html" class="nav-link active top-menu-padding top-menu-selected">게시판</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="promotion.html" class="nav-link top-menu-padding">프로모션</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="product.html" class="nav-link top-menu-padding">상품관리</a>
+                </li>
+                <li class="nav-item d-sm-inline-block">
+                    <a href="setting.html" class="nav-link top-menu-padding">환경설정</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside id="aside" class="main-sidebar sidebar-dark-primary elevation-4"> <!--text-sm-->
+            <!-- Brand Logo -->
+            <a href="dashboard.html" class="brand-link" style="padding-left:10px;">
+                <img src="./dist/img/AdminLTELogo.png" alt="G2Works Logo" class="brand-image img-circle elevation-3" style="opacity: .8;">
+                <img src="./dist/img/logo.png" alt="G2Works Logo" style="width:50%;opacity:1.0;margin-left:10px;margin-top:-5px;opacity: .8;">
+                <!-- <span class="brand-text font-weight-normal">G2Works</span> -->
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item menu-open">
+                            <!--<a href="#" class="nav-link active">-->
+                            <span class="nav-link">
+                                <p>
+                                    관리자 (admin)
+                                    <a href="login.html" class="right badge badge-secondary" style="color:#ffffff;font-weight:normal;">LOGOUT</a>
+                                </p>
+                            </span>
+                        </li>
+                        <li class="nav-header">게시판관리</li>
+                        <li class="nav-item menu-is-opening menu-open">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    게시판관리
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" id="menu-51" class="nav-link left-menu-padding">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>FAQ관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" id="menu-52" class="nav-link left-menu-padding">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>이용약관관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" id="menu-53" class="nav-link left-menu-padding">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>공지사항관리</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" id="menu-54" class="nav-link left-menu-padding">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>블로그관리</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h6 class="m-0" id="_selectTitle">-</h6>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6 menu-history-link">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item active" id="_selectHistory">-</li>
+                                <!-- <li class="breadcrumb-item">Dashboard</li> -->
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div id="contents">
+
+
+
+
+
+                            <p>
+                                탭 스타일 : <a href="http://210.206.234.98/sample/admin/pages/UI/navbar.html" target="_blank">/sample/admin/pages/UI/navbar.html</a>
+                            </p>
+                            <div style="display:flex;justify-content:center;">
+                                <div class="card card-primary card-tabs" style="width:800px;font-size:1.2em;">
+                                    <div class="card-header p-0 pt-1">
+                                        <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+                                            <li class="nav-item">
+                                            <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-one-home" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-one-profile" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-one-messages-tab" data-toggle="pill" href="#custom-tabs-one-messages" role="tab" aria-controls="custom-tabs-one-messages" aria-selected="false">Messages</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-one-settings-tab" data-toggle="pill" href="#custom-tabs-one-settings" role="tab" aria-controls="custom-tabs-one-settings" aria-selected="false">Settings</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="custom-tabs-one-tabContent">
+                                            <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur.
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-tabs-one-profile" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
+                                            Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam.
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
+                                            Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-tabs-one-settings" role="tabpanel" aria-labelledby="custom-tabs-one-settings-tab">
+                                            Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:flex;justify-content:center;font-size:1.2em;"">
+                                <div class="card card-primary card-outline card-outline-tabs" style="width:800px;">
+                                    <div class="card-header p-0 border-bottom-0">
+                                        <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                                            <li class="nav-item">
+                                            <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">Messages</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">Settings</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="custom-tabs-four-tabContent">
+                                            <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada lacus ullamcorper dui molestie, sit amet congue quam finibus. Etiam ultricies nunc non magna feugiat commodo. Etiam odio magna, mollis auctor felis vitae, ullamcorper ornare ligula. Proin pellentesque tincidunt nisi, vitae ullamcorper felis aliquam id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin id orci eu lectus blandit suscipit. Phasellus porta, ante et varius ornare, sem enim sollicitudin eros, at commodo leo est vitae lacus. Etiam ut porta sem. Proin porttitor porta nisl, id tempor risus rhoncus quis. In in quam a nibh cursus pulvinar non consequat neque. Mauris lacus elit, condimentum ac condimentum at, semper vitae lectus. Cras lacinia erat eget sapien porta consectetur.
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+                                                Mauris tincidunt mi at erat gravida, eget tristique urna bibendum. Mauris pharetra purus ut ligula tempor, et vulputate metus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas sollicitudin, nisi a luctus interdum, nisl ligula placerat mi, quis posuere purus ligula eu lectus. Donec nunc tellus, elementum sit amet ultricies at, posuere nec nunc. Nunc euismod pellentesque diam.
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
+                                                Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
+                                            </div>
+                                            <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
+                                                Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                              
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__shake" src="./dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        </div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer text-sm" style="text-align:center;">
+            <strong>Copyright &copy; 2014-2022 <a href="https://g2works.net" target="_blank">G2Works</a>.</strong>
+            All rights reserved.
+        </footer>
+    </div>
+
+    <script src="./plugins/jquery/jquery.min.js"></script> <!-- jQuery -->
+    <!-- jQuery UI 1.11.4 -->
+    <!--<script src="/plugins/jquery-ui/jquery-ui.min.js"></script>-->
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script type="text/javascript">
+        //$.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap 4 -->
+    <!-- DataTables  & Plugins -->
+    <script src="./plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="./plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="./plugins/jszip/jszip.min.js"></script>
+    <script src="./plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="./plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <!--<script src="/plugins/chart.js/Chart.min.js"></script>--> <!-- ChartJS -->
+    <!--<script src="/plugins/sparklines/sparkline.js"></script>--> <!-- Sparkline -->
+    <!--<script src="/plugins/jqvmap/jquery.vmap.min.js"></script>--> <!-- JQVMap -->
+    <!--<script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>-->
+    <!--<script src="/plugins/jquery-knob/jquery.knob.min.js"></script>--> <!-- jQuery Knob Chart -->
+    <!--<script src="/plugins/moment/moment.min.js"></script>--> <!-- daterangepicker -->
+    <!--<script src="/plugins/daterangepicker/daterangepicker.js"></script>-->
+    <!--<script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>--> <!-- Tempusdominus Bootstrap 4 -->
+    <!--<script src="/plugins/summernote/summernote-bs4.min.js"></script>--> <!-- Summernote -->
+    <script src="./plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> <!-- overlayScrollbars -->
+    <script src="./plugins/sweetalert2/sweetalert2.min.js"></script> <!-- SweetAlert2 -->
+    <script src="./plugins/toastr/toastr.min.js"></script> <!-- Toastr -->
+    <script src="./dist/js/adminlte.js"></script> <!-- AdminLTE App -->
+    <script src="./dist/js/common.js"></script>
+    <script src="./dist/js/route.js"></script>
+    <script>
+        function fnInit() {
+            // 페이지 로딩후 실행, 화면의 첫번째 메뉴 클릭
+            $('#menu-51').click();
+        }
+    </script>
+</body>
+</html>
