@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class BoardController {
     
     @RequestMapping(value="/board")
-    public String login (HttpServletRequest request , HttpServletResponse response ) {
+    public String board (HttpServletRequest request , HttpServletResponse response ) {
         
         return "thymeleaf/board";
     }

@@ -34,6 +34,8 @@ $(document).ready(function(){
         resizePosition(true);
     },50);
     leftMenuListeners();
+
+    debugger;
 });
 
 $(window).on('resize', function () {
@@ -56,7 +58,8 @@ function leftMenuListeners() {
       }
     }
   }
-  fnInit();
+  var leftMenuId = $('.nav-link.left-menu-padding').eq(0).attr('id');
+  $('#'+leftMenuId).click();
 }
 
 function menuLink(i,j) {

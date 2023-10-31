@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"><!--/*  layout 선언부 추가    */-->
+<head>
+    <!-- 스크립트, css 참조 -->
+    <div th:replace="~{/layout/script.html :: scriptFragment}"></div>
+</head>
+<body class="hold-transition sidebar-mini layout-footer-fixed"><!--text-sm-->
+    <div class="wrapper">
+        <!-- 헤더 소스 -->
+        <div th:replace="~{/layout/header.html :: headerFragment}"></div>
+        <!-- 페이지 소스 -->
+        <div layout:fragment="content"></div>
+        <!-- 페이지 소스 -->
+        <!-- 풋터 소스 -->
+        <div th:replace="~{/layout/footer.html :: footerFragment}"></div>
+    </div>
+</body>
+</html>
