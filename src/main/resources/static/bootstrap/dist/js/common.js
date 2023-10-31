@@ -34,8 +34,6 @@ $(document).ready(function(){
         resizePosition(true);
     },50);
     leftMenuListeners();
-
-    debugger;
 });
 
 $(window).on('resize', function () {
@@ -68,4 +66,8 @@ function menuLink(i,j) {
     $(this).addClass('active left-menu-selected');
     menuClickBrigade(i, j);
   });
+}
+
+function pageMove(page){
+  location.href = "/"+ page;
 }

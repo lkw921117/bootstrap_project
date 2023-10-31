@@ -1,8 +1,10 @@
 function menuClickBrigade(topMenu, LeftMenu) {
+  var topMenuNm = "";
   switch (topMenu) {
     case 1:
       switch (LeftMenu) {
         case 1:
+          topMenuNm = "main";
           $('#_selectTitle').html('Dashboard');
           $('#_selectHistory').html('<a href="/dashboard">메인</a> > Dashboard');
           console.log('메인-대시보드 --> 컨텐츠표시');
@@ -10,6 +12,7 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
     case 2:
+      topMenuNm = "member";
       switch (LeftMenu) {
         case 1:
           $('#_selectTitle').html('회원조회');
@@ -34,6 +37,7 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
     case 3:
+      topMenuNm = "request";
       switch (LeftMenu) {
         case 1:
           $('#_selectTitle').html('서비스 신청현황조회');
@@ -48,6 +52,7 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
     case 4:
+      topMenuNm = "pay";
       switch (LeftMenu) {
         case 1:
           $('#_selectTitle').html('결제내역조회');
@@ -67,6 +72,7 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
     case 5:
+      topMenuNm = "board";
       switch (LeftMenu) {
         case 1:
           $('#_selectTitle').html('FAQ 관리');
@@ -91,6 +97,7 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
     case 6:
+      topMenuNm = "promotion";
       switch (LeftMenu) {
         case 1:
           $('#_selectTitle').html('할인관리');
@@ -100,6 +107,7 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
     case 7:
+      topMenuNm = "product";
       switch (LeftMenu) {
         case 1:
           $('#_selectTitle').html('상품조회');
@@ -134,6 +142,7 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
     case 8:
+      topMenuNm = "setting";
       switch (LeftMenu) {
         case 1:
           $('#_selectTitle').html('관리자조회');
@@ -148,4 +157,6 @@ function menuClickBrigade(topMenu, LeftMenu) {
       }
       break;
   }
+  
+  $("[name="+topMenuNm+"]").addClass("top-menu-selected");
 }
